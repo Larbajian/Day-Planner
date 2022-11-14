@@ -52,7 +52,7 @@ $(function(){ //shows current time at the top of the webpage
     var pastBlock = document.getElementsByClassName ('past');
     var presentBlock = document.getElementsByClassName ('present');
     var futureBlock = document.getElementsByClassName ('future');
-    var timeByHourArray = document.getElementById['hour-9','hour-10','hour-11','hour-12','hour-1','hour-2','hour-3','hour-4','hour-5'];
+    var timeByHourArray = ['#hour-9','#hour-10','#hour-11','#hour-12','#hour-1','#hour-2','#hour-3','#hour-4','#hour-5'];
     var dated = n +", " + m + ", "+y;
     var d = new Date();
     var n = d.getDay()
@@ -63,34 +63,43 @@ $(function(){ //shows current time at the top of the webpage
 
     $ (function (timeOfDay) {
 
-    for (var i = 0; i < timeByHourArray.length; i++)
+        console.log(dated)
+        console.log(dayjs().hour(12).$H)
 
-      if (i === dayjs().isBefore(dayjs('dated'))) {
+        //.attr("data-id");
 
-        $(timeByHourArray[i]).removeClass('future', 'present');
+    for (var i = 0; i < timeByHourArray.length; i++) {
+console.log ($(timeByHourArray[i]).attr('data-timeformat'))
 
-        timeByHourArray[i].classList.remove("present","future");
+      if (parseInt($(timeByHourArray[i]).attr('data-timeformat')) > dayjs().hour()) {
+
+        $(timeByHourArray[i]).removeClass('past present');
+        
+
+        //timeByHourArray[i].classList.remove("present","future");
       }
         
 
-      if (i === dayjs().isSame(dayjs('dated'))) {
+      if (parseInt($(timeByHourArray[i]).attr('data-timeformat')) === dayjs().hour()) {
 
-        $(timeByHourArray[i]).removeClass('past', 'future');
+        $(timeByHourArray[i]).removeClass('past future');
 
      
-        timeByHourArray[i].classList.remove("past","future");
+        //timeByHourArray[i].classList.remove("past","future");
       
       }
 
-      if (i === dayjs().isAfter(dayjs('dated'))) {
+      if (parseInt($(timeByHourArray[i]).attr('data-timeformat')) < dayjs().hour()) {
 
-        $(timeByHourArray[i]).removeClass('past', 'present');
+        $(timeByHourArray[i]).removeClass('present future');
 
-       
-        timeByHourArray[i].classList.remove("past","present");
+       console.log ('hello world')
+        //timeByHourArray[i].classList.remove("past","present");
       
-      return;
+      
       }
+    }
+  
     
 
 
