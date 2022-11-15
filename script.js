@@ -49,9 +49,6 @@ $(function(){ //shows current time at the top of the webpage
     //show each time block as past, present or future 
     //variables from entire doc
 
-    var pastBlock = document.getElementsByClassName ('past');
-    var presentBlock = document.getElementsByClassName ('present');
-    var futureBlock = document.getElementsByClassName ('future');
     var timeByHourArray = ['#hour-9','#hour-10','#hour-11','#hour-12','#hour-1','#hour-2','#hour-3','#hour-4','#hour-5'];
     var dated = n +", " + m + ", "+y;
     var d = new Date();
@@ -66,7 +63,7 @@ $(function(){ //shows current time at the top of the webpage
         console.log(dated)
         console.log(dayjs().hour(12).$H)
 
-        //.attr("data-id");
+        //.attr("data-id"); select
 
     for (var i = 0; i < timeByHourArray.length; i++) {
 console.log ($(timeByHourArray[i]).attr('data-timeformat'))
@@ -75,8 +72,6 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
 
         $(timeByHourArray[i]).removeClass('past present');
         
-
-        //timeByHourArray[i].classList.remove("present","future");
       }
         
 
@@ -84,33 +79,27 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
 
         $(timeByHourArray[i]).removeClass('past future');
 
-     
-        //timeByHourArray[i].classList.remove("past","future");
-      
       }
 
       if (parseInt($(timeByHourArray[i]).attr('data-timeformat')) < dayjs().hour()) {
 
         $(timeByHourArray[i]).removeClass('present future');
 
-       console.log ('hello world')
-        //timeByHourArray[i].classList.remove("past","present");
-      
-      
       }
     }
-  
+   //-------------------------------------------------------------
     
+   var textArea = 
+   ['#TA9','#TA10','#TA11','#TA12','#TA1','#TA2','#TA3','#TA4','#TA5'].value; 
+   var textAreaInput = textArea.value();
+   var saveBtn = document.getElementsByClassName ('.saveBtn');
 
-
-      
-
-
+   saveBtn.on('click', function () {
+    localStorage.setItem('textAreaInput', JSON.stringify(textAreaInput));
     
+  })
 
-    
-
-
+}
 
     
 
@@ -122,12 +111,8 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
+
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
