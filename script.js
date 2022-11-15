@@ -89,18 +89,42 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
     }
    //-------------------------------------------------------------
     
-   var textArea = 
-   ['#TA9','#TA10','#TA11','#TA12','#TA1','#TA2','#TA3','#TA4','#TA5'].value; 
-   var textAreaInput = textArea.value();
-   var saveBtn = document.getElementsByClassName ('.saveBtn');
+   var textArea =  document.querySelectorAll("time-block");
+   
+   var saveBtn = document.querySelectorAll('saveBtn');
 
-   saveBtn.on('click', function () {
-    localStorage.setItem('textAreaInput', JSON.stringify(textAreaInput));
+   
+   
+    saveBtn.addEventListener("click", function() {
+    var textAreaInput = textArea.value;
+    localStorage.setItem("textAreaInput", JSON.stringify(textAreaInput));
+    }
+
+    var storedEvents = JSON.parse(localStorage.getItem('textAreaInput'));
+
     
-  })
+  //or????
 
+  var textArea = //userinput
+  //make object for each box with user input 
+  //wiht something like this.. var printStorageBody = function () {
+    //$("body").html(""); *****$("textarea").html('')
+    //$("<pre>") **************$
+    //.text(JSON.stringify(localStorage, null, '\t'))
+    //.appendTo("body"); *******$ .appendTo('textarea')
 }
 
+  
+   
+
+    
+
+
+
+
+//function that saves to local storage
+//function to call storage
+//eventlistener for ids of save buttons
     
 
 //$(function () {
@@ -118,4 +142,3 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
