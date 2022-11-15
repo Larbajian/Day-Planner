@@ -98,7 +98,9 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
     saveBtn.addEventListener("click", function() {
     var textAreaInput = textArea.value;
     localStorage.setItem("textAreaInput", JSON.stringify(textAreaInput));
+    localStorage.getItem("textAreaInput")
     }
+    //or localStorage.setItem("textAreaInput", textAreaInput);
 
     var storedEvents = JSON.parse(localStorage.getItem('textAreaInput'));
 
@@ -112,7 +114,7 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
     //$("<pre>") **************$
     //.text(JSON.stringify(localStorage, null, '\t'))
     //.appendTo("body"); *******$ .appendTo('textarea')
-}
+
 
   
    
