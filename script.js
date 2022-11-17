@@ -87,27 +87,238 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
 
       }
     }
+  })
    //-------------------------------------------------------------
     
-   var textArea =  document.querySelectorAll("time-block");
    
-   var saveBtn = document.querySelectorAll('saveBtn');
+   var saveBtn = document.querySelectorAll('.saveBtn');
+   console.log(saveBtn)
 
+    saveBtn[0].addEventListener("click", function() {
+
+      console.log($('#hour-9 .description').val())
+    localStorage.setItem('hour-9', $('#hour-9 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr9 = localStorage.getItem('hour-9');
+      
+      $('#hour-9 .description').val(recallHr9) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr9)
+
+    })
+
+    saveBtn[1].addEventListener("click", function() {
+
+      console.log($('#hour-10 .description').val())
+    localStorage.setItem('hour-10', $('#hour-10 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr10 = localStorage.getItem('hour-10');
+      
+      $('#hour-10 .description').val(recallHr10) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr10)
+
+    })
+
+    saveBtn[2].addEventListener("click", function() {
+
+      console.log($('#hour-11 .description').val())
+    localStorage.setItem('hour-11', $('#hour-11 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr11 = localStorage.getItem('hour-11');
+      
+      $('#hour-11 .description').val(recallHr11) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr11)
+
+    })
+
+    saveBtn[3].addEventListener("click", function() {
+
+      console.log($('#hour-12 .description').val())
+    localStorage.setItem('hour-12', $('#hour-12 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr12 = localStorage.getItem('hour-12');
+      
+      $('#hour-12 .description').val(recallHr12) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr12)
+
+    })
+
+    saveBtn[4].addEventListener("click", function() {
+
+      console.log($('#hour-1 .description').val())
+    localStorage.setItem('hour-1', $('#hour-1 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr1 = localStorage.getItem('hour-1');
+      
+      $('#hour-1 .description').val(recallHr1) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr1)
+
+    })
+
+    saveBtn[5].addEventListener("click", function() {
+
+      console.log($('#hour-2 .description').val())
+    localStorage.setItem('hour-2', $('#hour-2 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr2 = localStorage.getItem('hour-2');
+      
+      $('#hour-2 .description').val(recallHr2) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr2)
+
+    })
+
+    saveBtn[6].addEventListener("click", function() {
+
+      console.log($('#hour-3 .description').val())
+    localStorage.setItem('hour-3', $('#hour-3 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr3 = localStorage.getItem('hour-3');
+      
+      $('#hour-3 .description').val(recallHr3) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr3)
+
+    })
+
+    saveBtn[7].addEventListener("click", function() {
+
+      console.log($('#hour-4 .description').val())
+    localStorage.setItem('hour-4', $('#hour-4 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr4 = localStorage.getItem('hour-4');
+      
+      $('#hour-4 .description').val(recallHr4) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr4)
+
+    })
+
+    saveBtn[8].addEventListener("click", function() {
+
+      console.log($('#hour-5 .description').val())
+    localStorage.setItem('hour-5', $('#hour-5 .description').val());
+    
+    })
+
+    $(function() { //runs everytime page is refreshed and everything appears on the page
+
+      var recallHr9 = localStorage.getItem('hour-5');
+      
+      $('#hour-5 .description').val(recallHr9) ///val() w/e in () changes text in a text area only
+      
+      console.log(recallHr9)
+
+    })
+
+    /*
+    ==============
+   curr_dictionary = {0: 'hour-9', 1: 'hour-10', ...}
+for () {
+      // You would use the dictionary above
+      localStorage.setItem(..., ...);
+}
+================
    
+    //$('#TA').append('<li>' + $('#hour-9').val());
+
+    $('#hour-10'.description).val(localStorage.setItem('hour-10'));
+    $('#hour-10'.description).val(localStorage.getItem('hour-10'));
+
+    $('#hour-11'.description).val(localStorage.setItem('hour-11'));
+    $('#hour-11'.description).val(localStorage.getItem('hour-11'));
+
+    $('#hour-12'.description).val(localStorage.setItem('hour-12'));
+    $('#hour-12'.description).val(localStorage.getItem('hour-12'));
+
+    $('#hour-1'.description).val(localStorage.setItem('hour-1'));
+    $('#hour-1'.description).val(localStorage.getItem('hour-1'));
+
+    $('#hour-2'.description).val(localStorage.setItem('hour-2'));
+    $('#hour-2'.description).val(localStorage.getItem('hour-2'));
+
+    $('#hour-3'.description).val(localStorage.setItem('hour-3'));
+    $('#hour-3'.description).val(localStorage.getItem('hour-3'));
+
+    $('#hour-4'.description).val(localStorage.setItem('hour-4'));
+    $('#hour-4'.description).val(localStorage.getItem('hour-4'));
+
+    $('#hour-5'.description).val(localStorage.setItem('hour-5'));
+    $('#hour-5'.description).val(localStorage.getItem('hour-5'));
+    
+      })
+    //load any saved data from local storage using jquery
+    //do with all hour-
    
-    saveBtn.addEventListener("click", function() {
-    var textAreaInput = textArea.value;
-    localStorage.setItem("textAreaInput", JSON.stringify(textAreaInput));
-    localStorage.getItem("textAreaInput")
-    }
+
+    //function (userInputElement) {
+
+      //var $newLiHour9 = $("<li id='TA9'></li>").text('#hour-9'.description).val();   // Create with jQuery
+      //$('textarea'.)
+
+     // var $newdiv1 = $( "<div id='object1'></div>" ),
+  //newdiv2 = document.createElement( "div" ),
+ // existingdiv1 = document.getElementById( "foo" );
+ 
+//$( "body" ).append( $newdiv1, [ newdiv2, existingdiv1 ] );
+      //var hour9 = document.createElement('<li>');
+      //hour9.textContent = 
+
+
+  
+
+  // Adds text content to created tag
+ 
+    //appending saved input to hmtl
+
+
+  //  todoList.appendChild(li);
+
+
     //or localStorage.setItem("textAreaInput", textAreaInput);
 
-    var storedEvents = JSON.parse(localStorage.getItem('textAreaInput'));
+    
 
     
   //or????
 
-  var textArea = //userinput
+    //userinput
   //make object for each box with user input 
   //wiht something like this.. var printStorageBody = function () {
     //$("body").html(""); *****$("textarea").html('')
@@ -143,4 +354,6 @@ console.log ($(timeByHourArray[i]).attr('data-timeformat'))
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+  // TODO: Add code to display the current date in the header of the page
+
+  */
